@@ -1,0 +1,29 @@
+{
+    "cSpell.words": [
+        "beautifulsoup",
+        "dbsr",
+        "endfor",
+        "fullchain",
+        "gunicorn",
+        "healthcheck",
+        "joblib",
+        "jsonify",
+        "KHTML",
+        "lemmatize",
+        "lemmatizer",
+        "letsencrypt",
+        "nltk",
+        "numpy",
+        "privkey",
+        "proba",
+        "punkt",
+        "PYTHONUNBUFFERED",
+        "scikit",
+        "stopwords",
+        "stylesheet",
+        "tfidf",
+        "vectorizer",
+        "wordnet",
+        "yourdomain"
+    ]
+}

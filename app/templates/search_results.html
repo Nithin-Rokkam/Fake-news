@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h3 class="mb-4">Search Results for "{{ query }}"</h3>
+        
+        {% if news_items %}
+            {% for item in news_items %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.title }}</h5>
+                    <p class="card-text text-muted">
+                        <small>{{ item.source }} - {{ item.date }}</small>
+                    </p>
+                    <form action="{{ url_for('analyze') }}" method="POST">
+                        <input type="hidden" name="news_url" value="{{ item.url }}">
+                        <button type="submit" class="btn btn-sm btn-primary">Analyze This Article</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-warning">No news articles found for your search.</div>
+        {% endif %}
+        
+        <a href="/" class="btn btn-outline-secondary mt-3">Back to Home</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header {% if prediction == 'True' %}bg-success{% else %}bg-danger{% endif %} text-white">
+                <h5>Analysis Result</h5>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">{{ article.title }}</h4>
+                <div class="alert {% if prediction == 'True' %}alert-success{% else %}alert-danger{% endif %}">
+                    <strong>Prediction:</strong> {{ prediction }} <br>
+                    <strong>Confidence:</strong> {{ confidence }}%
+                </div>
+                
+                <h5>Article Summary</h5>
+                <p class="card-text">{{ article.text[:500] }}...</p>
+                
+                {% if article.url %}
+                <a href="{{ article.url }}" class="btn btn-outline-primary" target="_blank">View Original Article</a>
+                {% endif %}
+                <a href="/" class="btn btn-outline-secondary">Analyze Another</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

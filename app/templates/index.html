@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h1 class="text-center mb-4">Fake News Detector</h1>
+        <p class="text-center mb-4">Check the authenticity of news articles with our AI-powered detector</p>
+        
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>Analyze by URL</h5>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('analyze') }}" method="POST">
+                    <div class="mb-3">
+                        <input type="url" class="form-control" name="news_url" placeholder="Enter news article URL" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Analyze</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>Or paste text</h5>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('analyze') }}" method="POST">
+                    <div class="mb-3">
+                        <textarea class="form-control" name="news_text" rows="5" placeholder="Paste news article text here" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Analyze</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h5>Search for news</h5>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('analyze') }}" method="POST">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="search_query" placeholder="Enter news topic to search" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
