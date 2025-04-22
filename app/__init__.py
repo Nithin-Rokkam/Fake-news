@@ -6,7 +6,7 @@ def create_app():
     app = Flask(__name__)
     
     # Configuration
-    # app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', secrets.token_hex(32))
+    # app.config['SECRET_KEY'] = os.environ.get('ec58b3d0de26af5678dc3fa569d52fd292438360b1eefa25986b0734382ae79a', secrets.token_hex(32))
     from .models import FakeNewsModel
     from .scraper import NewsScraper
     
